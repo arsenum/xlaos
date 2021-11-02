@@ -1,0 +1,7 @@
+{
+  "name": "evmoswallet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
