@@ -30,8 +30,8 @@ npm install -g @ionic/cli
 ```
 Clone this repository
 ```
-git clone https://github.com/arsen3d/EVMOSWallet.git
-cd EVMOSWallet
+git clone https://github.com/arsenum/xlaos.git
+cd XLAOS
 ```
 Serve wallet
 ```
