@@ -1,6 +1,6 @@
 
 ##Introduction
-This is a proof of concept wallet designed to work with EVMOS. It's intended for testing purposes only.
+This is a proof of concept staging environment for XLAOS. It's intended for testing purposes only.
 ##OSX Setup Instructions
 Download Binary from 
 ```
