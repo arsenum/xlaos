@@ -10,7 +10,8 @@ This is a proof of concept staging environment for XLAOS. It's intended for test
 * Create Desktop/Mobile dashbaord
 * Create Export/Import Gateway/Bridge for Waves/Solana/Polygon/Binance Smart Chain.
 * Create Block Explorer for monitoring transactions on X.LA tokens on multiple chains.
-
+* Create Oracle responsible for bringing external data in to Smart Contract
+** Data 
 
 
 ## OSX Setup Instructions
