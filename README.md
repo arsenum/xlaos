@@ -7,6 +7,7 @@ This is a proof of concept staging environment for XLAOS. It's intended for test
 * Mint ERC20 Token XO.LA for vesting.
 * Mint ERC20 Token X.LA for making payments.
 * Create Proof of Concept SDK for making payments.
+* Create Desktop/Mobile dashbaord
 * Create Export/Import Gateway/Bridge for Waves/Solana/Polygon/Binance Smart Chain.
 * Create Block Explorer for monitoring transactions on X.LA tokens on multiple chains.
 
