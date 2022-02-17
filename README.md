@@ -1,8 +1,8 @@
 
-##Introduction
+## Introduction
 This is a proof of concept staging environment for XLAOS. It's intended for testing purposes only.
 
-##Objective
+## Objective
 Setup test environment.
 Mint ERC20 Token XO.LA for vesting.
 Mint ERC20 Token X.LA for making payments.
