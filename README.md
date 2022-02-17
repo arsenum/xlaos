@@ -13,7 +13,7 @@ This is a proof of concept staging environment for XLAOS. It's intended for test
 
 
 
-##OSX Setup Instructions
+## OSX Setup Instructions
 Download Binary from 
 ```
 https://github.com/tharsis/evmos/releases/tag/v0.1.3
@@ -64,7 +64,7 @@ const contract = new web3.eth.Contract(
       "0x9d626f94b572a9Af414E9fd0f43a1Dd7b375FfB6"
     );
 ```
-###TODO
+### TODO
 * Implment reading ERC20 transfer amount.
 * Implment Indexing Server to get all transaction assosiated with wallet
 * Stylize wallet so that the design is beautiful
