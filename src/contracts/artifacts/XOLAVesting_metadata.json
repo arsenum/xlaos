@@ -28,6 +28,74 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_tx_id",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "accept",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "locked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "spent",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
@@ -44,9 +112,123 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tx_id",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					}
+				],
+				"name": "release",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tx_id",
+						"type": "address"
+					}
+				],
+				"name": "resolveToBuyer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "sendVested",
 				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tx_id",
+						"type": "address"
+					}
+				],
+				"name": "transaction",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tx_id",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -55,7 +237,7 @@
 			"details": "Implements voting process along with vote delegation",
 			"kind": "dev",
 			"methods": {},
-			"title": "XLA DAO",
+			"title": "XOLA Vesting",
 			"version": 1
 		},
 		"userdoc": {
@@ -80,6 +262,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"ERC20XLA.sol": {
+			"keccak256": "0x47169bc90c75df94e6c88f48bedb0b046530603f091fd7707d8e2ae9efdc7e3e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3f48a9d0b6645ab1dc6a8e9b78c8f0d1149b0fa9bf72c4dcc84c6726c6a25ad5",
+				"dweb:/ipfs/Qmd4CBDUb3emCK7ySDVQ3DJzxAw3xXmLTcmm27z25m3TVz"
+			]
+		},
 		"ERC20XOLA.sol": {
 			"keccak256": "0x84837d3626bbce920d19ea44f36f35b9f88e661fa1639769831aebfe5b384f8d",
 			"license": "GPL-3.0",
@@ -89,11 +279,11 @@
 			]
 		},
 		"VestingContract.sol": {
-			"keccak256": "0x6bf964945861a574b6131fe7887933f6c354a61b4d921d3fd9e57fecd409b7eb",
+			"keccak256": "0xdd8647f7c7f831feaea2cb5d5260d7444387b9fc25e29843daf029179f2e281f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6cadf25460cae43b343f795b246e2e84838c284a67da325224c844b0b22ce1d5",
-				"dweb:/ipfs/QmX2M4h243xUy8Ti46gh7gvozJ3wbygoCapbaMMGyQEGsL"
+				"bzz-raw://c8c60793c4cc2d83d8bd7bb7d28340500b89108497bea760e13540bded3e86a6",
+				"dweb:/ipfs/QmQJMUhhC6YfjLMzr83CZShM67jzz5mWrgHt1cvvipmbkh"
 			]
 		},
 		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol": {

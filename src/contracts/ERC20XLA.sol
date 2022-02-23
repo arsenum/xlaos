@@ -1,9 +1,8 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol";
 
 contract XLA is ERC20 {
-
-
     constructor() ERC20("X.LA", "XLA") {
     _mint(msg.sender, 46000000000 * 18 ** decimals());
     }

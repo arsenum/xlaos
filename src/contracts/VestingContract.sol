@@ -4,10 +4,12 @@ pragma solidity >=0.7.0 <0.9.0;
 //import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol";
 import "./ERC20XOLA.sol";
 import "./ERC20XLA.sol";
+
 /**
  * @title XOLA Vesting
  * @dev Implements voting process along with vote delegation
  */
+
 contract XOLAVesting {
     struct Transaction {
         address buyer;
@@ -15,11 +17,13 @@ contract XOLAVesting {
         bool locked;
         bool spent;
     }
+    address admin;
+    uint256 public totalBalance;
+
     address constant xolaAddress = 0xf8e81D47203A594245E36C48e151709F0C19fBe8;
     address constant xlaAddress = 0xf8e81D47203A594245E36C48e151709F0C19fBe8;
     //mapping(uint256 => mapping(address => uint256)) balances;
     mapping(address => mapping(address => Transaction)) public balances;
-
 
     //   modifier onlyAdmin {
     //     require(msg.sender == admin, "Only admin can unlock escrow.");
@@ -29,6 +33,10 @@ contract XOLAVesting {
     // constructor() {
     //     admin = msg.sender;
     // }
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Only admin can unlock escrow.");
+        _;
+    }
 
     // seller accepts a trade, erc20 tokens
     // get moved to the escrow (this contract)
@@ -37,7 +45,7 @@ contract XOLAVesting {
         address _buyer,
         uint256 _amount
     ) external returns (uint256) {
-        XOLA token = XOLA(p2pmAddress);
+        XOLA token = XOLA(xolaAddress);
         token.transferFrom(msg.sender, address(this), _amount);
         totalBalance += _amount;
         balances[msg.sender][_tx_id].amount = _amount;
@@ -65,11 +73,7 @@ contract XOLAVesting {
     }
 
     // admin unlocks tokens in escrow for a transaction
-    function release(address _tx_id, address _seller)
-        external
-        
-        returns (bool)
-    {
+    function release(address _tx_id, address _seller) external returns (bool) {
         balances[_seller][_tx_id].locked = false;
         return true;
     }
@@ -95,15 +99,19 @@ contract XOLAVesting {
 
 
     // admin can send funds to buyer if dispute resolution is in buyer's favor
-      function resolveToBuyer(address _seller, address _tx_id) onlyAdmin external returns(bool) {
+    function resolveToBuyer(address _seller, address _tx_id)
+        external
+        onlyAdmin
+        returns (bool)
+    {
         XLA token = XLA(xlaAddress);
         token.transfer(balances[_seller][_tx_id].buyer, balances[msg.sender][_tx_id].amount);
 
         balances[_seller][_tx_id].spent = true;
         totalBalance -= balances[_seller][_tx_id].amount;
         return true;
-      }
-      
+    }
+
     // constructor() ERC20("XO.LA Vesting", "XOLAVesting") {
     //     _mint(msg.sender, 36000000000 * 18**decimals());
     // }
