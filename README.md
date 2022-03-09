@@ -1,6 +1,6 @@
 
 ## Introduction
-This is a proof of concept staging environment for XLAOS. It's intended for testing purposes only.
+This is a proof of concept staging environment for XLAOS. It's intended for testing purposes only. The code has not been clean up and the contracts are not sercure.
 
 ## Objective
 * Setup test environment.
@@ -11,21 +11,21 @@ This is a proof of concept staging environment for XLAOS. It's intended for test
 * Create Export/Import Gateway/Bridge for Waves/Solana/Polygon/Binance Smart Chain.
 * Create Block Explorer for monitoring transactions on X.LA tokens on multiple chains.
 * Create Oracle responsible for bringing external data in to Smart Contract
-  
+
 
 
 ## OSX Setup Instructions
-Download Binary from 
+Download Binary from
 ```
 https://github.com/tharsis/evmos/releases/tag/v0.1.3
 ```
 Extract and move evmosd to your bin folder
 ```
-mv evmosd /usr/local/bin  
+mv evmosd /usr/local/bin
 ```
 Give setup script permission to execute
 ```
-chmod +x ./init.sh 
+chmod +x ./init.sh
 ```
 Run setup script (this also resets and launches the EVM)
 ```
@@ -53,7 +53,7 @@ ionic s
 
 See further setup instructions on Welcome Screen
 
-After you have imported your account in to Metamask, use https://remix.ethereum.org/ to deploy your ERC20 contract to the EVM, which is found in 
+After you have imported your account in to Metamask, use https://remix.ethereum.org/ to deploy your ERC20 contract to the EVM, which is found in
 ```
 /src/contracts/ERC20Token.sol
 ```
