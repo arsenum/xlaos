@@ -6,26 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "CheckAvailableClaim",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "Claim",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -51,6 +31,19 @@
 						"type": "uint256"
 					}
 				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -91,24 +84,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "tokens",
-						"type": "uint256"
-					}
-				],
-				"name": "lock",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -156,13 +131,6 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sendVested",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -279,11 +247,11 @@
 			]
 		},
 		"VestingContract.sol": {
-			"keccak256": "0xdd8647f7c7f831feaea2cb5d5260d7444387b9fc25e29843daf029179f2e281f",
+			"keccak256": "0xe71db29692e3ccc687da0a2596bf4b8e42a5a7d3096fce2a38f1101aa2a49d7d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c8c60793c4cc2d83d8bd7bb7d28340500b89108497bea760e13540bded3e86a6",
-				"dweb:/ipfs/QmQJMUhhC6YfjLMzr83CZShM67jzz5mWrgHt1cvvipmbkh"
+				"bzz-raw://5611fefdac1204f45c9d9eca11182d4a7d1f68728293de6b135aad0e0923ff05",
+				"dweb:/ipfs/QmPvBwei3Dqeu8qgXDgyKujk5KeniQqGZHDteYx9XqBYhq"
 			]
 		},
 		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol": {
