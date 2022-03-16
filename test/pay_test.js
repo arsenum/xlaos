@@ -55,7 +55,8 @@ contract("Pay Test", function (accounts ) {
     //console.log("XOLA Token transfer to vesting")
     //fc.init(xla.address,xola.address,oracle.address)
 
-    await xla.transfer(accounts[1], 15000)
+    await fc.initContract(xla.address);
+    await xla.transfer(accounts[1], 15000);
     await xla.approve(fc.address,await xla.totalSupply(), {from: accounts[1]});
     await loan_splitter.initContract(xla.address)
     await loan_splitter.setRefundAddress(stake_splitter.address)
@@ -69,14 +70,16 @@ contract("Pay Test", function (accounts ) {
     //await stake_splitter.calculate();
     console.log("AC-1 XLA (stakeholder/buyer):", ((await xla.balanceOf( accounts[1])).toString()))
     console.log("AC-1 XLA (spening 2000)")
-    await fc.buy(xla.address,2000,fc.address,stake_splitter.address, {from: accounts[1]})
+    //await fc.buy(xla.address,2000,fc.address,stake_splitter.address, {from: accounts[1]}) //
+    const orderId = fc.address;
+    await fc.buy(2000,orderId,stake_splitter.address, {from: accounts[1]})
     console.log("AC-1 XLA After Buy:", ((await xla.balanceOf( accounts[1])).toString()))
     console.log("AC-2 XLA (project stakeholder):", ((await xla.balanceOf(accounts[2])).toString()))
     console.log("AC-3 XLA (investor & stakeholder):", ((await xla.balanceOf(accounts[3])).toString()))
     console.log("AC-4 XLA (investor):", ((await xla.balanceOf(accounts[4])).toString()))
     console.log("Contract XLA (Claimable by XOLA):", ((await xla.balanceOf(fc.address)).toString()))
     console.log("AC-1 XLA (spening 3000)")
-    await fc.buy(xla.address,3000,fc.address,stake_splitter.address, {from: accounts[1]})
+    await fc.buy(3000,orderId,stake_splitter.address, {from: accounts[1]})
     //await fc.buy(xla.address,2000,fc.address,stake_splitter.address, {from: accounts[1]})
     console.log("AC-1 XLA After Buy:", ((await xla.balanceOf( accounts[1])).toString()))
     console.log("AC-2 XLA (project stakeholder):", ((await xla.balanceOf(accounts[2])).toString()))

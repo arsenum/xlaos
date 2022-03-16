@@ -7,7 +7,8 @@ contract XlaStorage{
     // address public loanAddress;
     // address public splitterAddress;
     address public oracleAddress;
-
+    uint256 public vestingBalance;
+    uint256 public totalTransactionValue; 
 
     function setConfig(
                 address  _xolaAddress,
