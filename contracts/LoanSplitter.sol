@@ -3,7 +3,7 @@
 pragma solidity >=0.5.0;
 //pragma solidity ^0.8.4;
 //import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "./ERC20XLA.sol";
+import "./XLA.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "./StakeSplitter.sol";
 contract LoanSplitter  {

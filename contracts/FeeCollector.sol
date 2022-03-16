@@ -4,7 +4,7 @@ pragma solidity >=0.5.0;
 //import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "./XOLA.sol";
-import "./ERC20XLA.sol";
+import "./XLA.sol";
 import "./StakeSplitter.sol";
 import "./Oracle.sol";
 contract FeeCollector  {

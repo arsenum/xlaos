@@ -1,4 +1,4 @@
-const Simple = artifacts.require("Simple");
+//const Simple = artifacts.require("Simple");
 const FeeCollector  = artifacts.require("FeeCollector");
 const XOLA  = artifacts.require("XOLA");
 const XLA  = artifacts.require("XLA");
@@ -63,7 +63,7 @@ contract("Pay Test", function (accounts ) {
     await loan_splitter.setFundingLimit(1000);
     await loan_splitter.setMembers([{account:accounts[3],amount:30},{account:accounts[4],amount:70}])
     await stake_splitter.initContract(xla.address)
-    return;
+
     //{account:loan_splitter.address,amount:50},
     await stake_splitter.setMembers([{account:loan_splitter.address,amount:100},{account:accounts[1],amount:5},{account:accounts[2],amount:15},{account:accounts[3],amount:80}])
     //await stake_splitter.calculate();
