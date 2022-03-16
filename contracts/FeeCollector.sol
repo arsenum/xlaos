@@ -6,7 +6,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "./XOLA.sol";
 import "./XLA.sol";
 import "./StakeSplitter.sol";
-import "./Oracle.sol";
+import "./XlaOracle.sol";
 contract FeeCollector  {
     address public owner;
     uint256 public balance;
